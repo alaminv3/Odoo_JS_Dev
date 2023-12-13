@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="medical_history_form_view" model="ir.ui.view">
+            <field name="name">medical_history.form</field>
+            <field name="model">medical.history</field>
+            <field name="arch" type="xml">
+                <form string="Medical History">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="partner_id" string="Patient"/>
+                            <h2>
+                                <field name="partner_id"/>
+                            </h2>
+                        </div>
+
+                        <group name="general" string="General Information">
+                            <group>
+                                <field name="medical_history_date" string="Date"/>
+                                <field name="doctor_other" string="Doctor/Other"/>
+                                <field name="phone" string="Phone"/>
+                                <field name="physical_exam_date" string="Physical Exam"/>
+                                <field name="pap_smear_date" string="Pap Smear"/>
+                                <field name="mammogram_date" string="Mammogram"/>
+                                <field name="last_menstrual_period" string="Last Menstrual Period"/>
+                                <field name="prostate_exam" string="Prostate Exam"/>
+                                <field name="other_medical_tests"
+                                       string="Any other medical or diagnostic tests you have had in the last two years"/>
+                            </group>
+                            <group>
+                                <field name="hormone_replacement"
+                                       string="Are you currently on any type of hormone replacement therapy"/>
+                                <field name="drug_allergies" string="Any known drug allergies and reactions"/>
+                                <field name="prescription_medication"
+                                       string="Any prescription medications you are now taking:"/>
+                                <field name="self_prescribed_medication"
+                                       string="Any self-prescribed medications, dietary supplements, or vitamins you are now taking"/>
+                            </group>
+                        </group>
+
+                        <group name="past_medical_history" string="Past Medical History">
+                            <group>
+                                <field name="heart_attack"/>
+                                <field name="varicose_veins"/>
+                                <field name="high_cholesterol"/>
+                                <field name="rheumatic_fever"/>
+                                <field name="liver_disease"/>
+                                <field name="kidney_disease"/>
+                                <field name="depression"/>
+                                <field name="stroke"/>
+                                <field name="asthma"/>
+                                <field name="cancer"/>
+                                <field name="ulcers"/>
+                            </group>
+                            <group>
+                                <field name="gout"/>
+                                <field name="hepatitis"/>
+                                <field name="anxiety"/>
+                                <field name="diseases_of_arteries"/>
+                                <field name="heart_murmur"/>
+                                <field name="diabetes_or_blood_sugar"/>
+                                <field name="arthritis_of_legs_or_arms"/>
+                                <field name="migraines"/>
+                                <field name="epilepsy_or_seizures"/>
+                                <field name="anemia"/>
+                            </group>
+                        </group>
+
+                        <group name="family_medical_history" string="Family Medical History">
+                            <group>
+                                <field name="family_heart_attack"/>
+                                <field name="family_varicose_veins"/>
+                                <field name="family_high_cholesterol"/>
+                                <field name="family_rheumatic_fever"/>
+                                <field name="family_liver_disease"/>
+                                <field name="family_kidney_disease"/>
+                                <field name="family_depression"/>
+                                <field name="family_stroke"/>
+                                <field name="family_asthma"/>
+                                <field name="family_cancer"/>
+                                <field name="family_ulcers"/>
+                            </group>
+                            <group>
+                                <field name="family_gout"/>
+                                <field name="family_hepatitis"/>
+                                <field name="family_anxiety"/>
+                                <field name="family_diseases_of_arteries"/>
+                                <field name="family_heart_murmur"/>
+                                <field name="family_diabetes_or_blood_sugar"/>
+                                <field name="family_arthritis_of_legs_or_arms"/>
+                                <field name="family_migraines"/>
+                                <field name="family_epilepsy_or_seizures"/>
+                                <field name="family_anemia"/>
+                            </group>
+                        </group>
+
+                        <group name="social_history" string="Social History">
+                            <group>
+                                <field name="smoking"/>
+                                <field name="alcohol"/>
+                                <field name="caffeine"/>
+                                <field name="diet"/>
+                            </group>
+                            <group>
+                                <field name="exercise"/>
+                                <field name="high_stress_level"/>
+                                <field name="work_activity"/>
+                                <field name="patient_signature" widget="signature"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_history_tree_view" model="ir.ui.view">
+            <field name="name">medical_history.tree</field>
+            <field name="model">medical.history</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="partner_id"/>
+                    <field name="medical_history_date"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--        <record id="medical_history_search_view" model="ir.ui.view">-->
+        <!--            <field name="name">ProjectName.medical_history.search</field>-->
+        <!--            <field name="model">ProjectName.medical_history</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search string="ModelTitle">-->
+        <!--                    <group expand="1" string="Group By">-->
+        <!--                        <filter string="Example Field" name="example_field" domain="[]" context="{'group_by':'example_field'}"/>-->
+        <!--                    </group>-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="medical_history_act_window" model="ir.actions.act_window">
+            <field name="name">Medical History</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.history</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no patient's medical history. click here to add new.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="medical_history_menu"
+                  action="medical_history_act_window"
+                  parent="contacts.res_partner_menu_config"
+                  sequence="2"
+        />
+    </data>
+</odoo>

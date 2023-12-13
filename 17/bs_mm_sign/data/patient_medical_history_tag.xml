@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="medical_history_patient_heart_attack" model="patient.medical.tag">
+        <field name='name'>Heart Attack</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_varicose_veins" model="patient.medical.tag">
+        <field name='name'>Varicose Veins</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_high_cholesterol" model="patient.medical.tag">
+        <field name='name'>High Cholesterol</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_rheumatic_fever" model="patient.medical.tag">
+        <field name='name'>Rheumatic Fever</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_liver_disease" model="patient.medical.tag">
+        <field name='name'>Liver Disease</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_kidney_disease" model="patient.medical.tag">
+        <field name='name'>Kidney Disease</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_depression" model="patient.medical.tag">
+        <field name='name'>Depression</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_stroke" model="patient.medical.tag">
+        <field name='name'>Stroke</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_asthma" model="patient.medical.tag">
+        <field name='name'>Asthma</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_cancer" model="patient.medical.tag">
+        <field name='name'>Cancer</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_ulcers" model="patient.medical.tag">
+        <field name='name'>Ulcers</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_gout" model="patient.medical.tag">
+        <field name='name'>Gout</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_hepatitis" model="patient.medical.tag">
+        <field name='name'>Hepatitis</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_anxiety" model="patient.medical.tag">
+        <field name='name'>Anxiety</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_diseases_of_arteries" model="patient.medical.tag">
+        <field name='name'>Diseases Of Arteries</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_heart_murmur" model="patient.medical.tag">
+        <field name='name'>Heart Murmur</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_diabetes_or_blood_sugar" model="patient.medical.tag">
+        <field name='name'>Diabetes Or Blood Sugar</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_migraines" model="patient.medical.tag">
+        <field name='name'>Migraines</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_epilepsy_or_seizures" model="patient.medical.tag">
+        <field name='name'>Epilepsy Or Seizures</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_anemia" model="patient.medical.tag">
+        <field name='name'>Anemia</field>
+        <field name='active'>1</field>
+    </record>
+
+    <record id="medical_history_patient_arthritis_of_legs_or_arms" model="patient.medical.tag">
+        <field name='name'>Arthritis of legs or arms</field>
+        <field name='active'>1</field>
+    </record>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_history,bs_mm_sign.medical_history,model_medical_history,base.group_user,1,1,1,1
+access_family_medical_tag,bs_mm_sign.family_medical_tag,model_family_medical_tag,base.group_system,1,1,1,1
+access_patient_medical_tag,bs_mm_sign.patient_medical_tag,model_patient_medical_tag,base.group_system,1,1,1,1
+access_sign_item_option,bs_mm_sign.sign_item_option,model_sign_item_option,base.group_system,1,1,1,1

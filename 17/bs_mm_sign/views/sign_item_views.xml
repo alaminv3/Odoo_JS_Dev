@@ -1,0 +1,85 @@
+<odoo>
+    <data>
+        <!-- Inherit Sign template Form View to Modify it -->
+        <record id="inherited_sign_item_tree_view" model="ir.ui.view">
+            <field name="name">Sign Item tree view</field>
+            <field name="model">sign.item</field>
+            <field name="inherit_id" ref="sign.sign_item_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type_id']" position="before">
+                    <field name="name"/>
+                    <field name="option_ids" widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//field[last()]" position="after">
+                    <field name="model_id"/>
+                    <field name="field_id"/>
+                    <field name="field_action"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="sign_item_custom_tree_view" model="ir.ui.view">
+            <field name="name">sign.item.tree</field>
+            <field name="model">sign.item</field>
+            <field name="arch" type="xml">
+                <tree default_order="page,posY,posX,id">
+                    <field name="template_id"/>
+                    <field name="type_id"/>
+                    <field name="required"/>
+                    <field name="responsible_id"/>
+                    <field name="page"/>
+                    <field name="posX"/>
+                    <field name="posY"/>
+                    <field name="width"/>
+                    <field name="height"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sign_item_custom_form_view" model="ir.ui.view">
+            <field name="name">sign.item.form</field>
+            <field name="model">sign.item</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="Information">
+                                <field name="name"/>
+                                <field name="template_id"/>
+                                <field name="type_id"/>
+                                <field name="required"/>
+                                <field name="responsible_id"/>
+                                <field name="model_id"/>
+                                <field name="field_id"/>
+                                <field name="field_action"/>
+                            </group>
+
+                            <group string="Display">
+                                <field name="page"/>
+                                <field name="posX"/>
+                                <field name="posY"/>
+                                <field name="width"/>
+                                <field name="height"/>
+                                <field name="option_ids" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sign_item_action" model="ir.actions.act_window">
+            <field name="name">Sign Items</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sign.item</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('sign_item_custom_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('sign_item_custom_form_view')})]"/>
+            <field name="context">{'search_default_group_by_template_id': 1}</field>
+        </record>
+
+        <menuitem id="sign_item_menu" parent="sign.menu_document" action="sign_item_action" sequence="30"/>
+    </data>
+</odoo>

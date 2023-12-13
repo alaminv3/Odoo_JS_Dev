@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="patient_medical_tag_tree_view" model="ir.ui.view">
+            <field name="name">patient_medical_tag.tree</field>
+            <field name="model">patient.medical.tag</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="patient_medical_tag_act_window" model="ir.actions.act_window">
+            <field name="name">Patient Medical Tag</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">patient.medical.tag</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no Patient Medical Tag. click here to add new.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="patient_medical_tag_menu"
+                action="patient_medical_tag_act_window"
+                parent="contacts.res_partner_menu_config"
+                sequence="2"
+        />
+    </data>
+</odoo>

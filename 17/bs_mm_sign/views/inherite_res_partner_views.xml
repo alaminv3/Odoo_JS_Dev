@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_form_inherit" model="ir.ui.view">
+            <field name="name">res_partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='schedule_meeting']" position="before">
+                    <button class="oe_stat_button" type="object" name="action_view_medical_history" icon="fa-list">
+                        <field string="Medical History" name="medical_history_count" widget="statinfo"/>
+                    </button>
+                </xpath>
+
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="best_phone" widget="phone"/>
+                    <field name="emergency_name"/>
+                    <field name="relationship"/>
+                    <field name="emergency_number" widget="phone"/>
+                </xpath>
+
+                <xpath expr="//notebook/page[last()]" position="after">
+                    <page name="hipaa_compliant" string="HIPAA">
+                        <div class="oe_title">
+                            <div>
+                                <label for="office_can_msg"/>
+                                <span><field name="office_can_msg"/></span>
+                            </div>
+
+                            <div>
+                                <label for="office_can_call"/>
+                                <span><field name="office_can_call"/></span>
+                            </div>
+
+                            <div>
+                                <label for="office_can_call_at_work"/>
+                                <span><field name="office_can_call_at_work"/></span>
+                            </div>
+
+                            <div>
+                                <label for="office_can_msg_spouse"/>
+                                <span><field name="office_can_msg_spouse"/></span>
+                            </div>
+
+                            <div>
+                                <label for="office_only_speak"/>
+                                <span><field name="office_only_speak"/></span>
+                            </div>
+
+                            <div>
+                                <label for="family_member_info"/>
+                                <p><field name="family_member_info"/></p>
+                            </div>
+                        </div>
+                    </page>
+                </xpath>
+
+                <xpath expr="//group[last()]" position="after">
+                    <group>
+                        <field name="patient_med_tag_ids" widget="many2many_tags"/>
+                        <field name="family_med_tag_ids" widget="many2many_tags"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
